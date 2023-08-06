@@ -1,8 +1,8 @@
-import MenuIcon from "@mui/icons-material/Menu";
-import NearMeIcon from "@mui/icons-material/NearMe";
-import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
-import Link from "next/link";
-import styles from "../assets/globalStyles";
+import MenuIcon from '@mui/icons-material/Menu'
+import NearMeIcon from '@mui/icons-material/NearMe'
+import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk'
+import Link from 'next/link'
+import styles from '../assets/globalStyles'
 
 const MenuXl = () => {
   const style = {
@@ -44,7 +44,7 @@ const MenuBar = (props: Props) => {
   const style = {
     wrapper: `fixed lg:hidden ${
       props.toggle ? open : closed
-    }  text-white bg-[--secondary-color] z-20 h-[100vh] top-0 w-[74vw] pt-[1.4rem] flex flex-col ${
+    }  text-white bg-[--nav-color] z-20 h-[100vh] top-0 w-[74vw] pt-[1.4rem] flex flex-col ${
       styles.menuSlide
     }`,
     hotlineItem: `flex text-[1.2rem] font-bold pb-10 mx-auto`,
@@ -113,7 +113,7 @@ const Menu = (props: Props) => {
       <MenuXl />
       <MenuSm toggle={props.toggle} setToggle={props.setToggle} />
     </>
-  );
-};
+  )
+}
 
-export default Menu;
+export default Menu

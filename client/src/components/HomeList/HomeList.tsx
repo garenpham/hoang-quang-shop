@@ -38,7 +38,7 @@ const HomeList = (props: Props) => {
           <p className="italic text-[--primary-color]">
             Chuyên kinh doanh. Sửa chữa. Lắp đặt:
           </p>
-          <p className="text-blue-700 font-bold">
+          <p className="text-[--secondary-color] font-bold">
             Điện nước dân dụng - Ống nước <br className="block lg:hidden" />-
             Vật liệu xây dựng
           </p>

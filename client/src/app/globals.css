@@ -8,7 +8,8 @@
   box-sizing: border-box;
   --root-margin: 1rem;
   --primary-color: rgb(220 38 38);
-  --secondary-color: rgb(53, 38, 170);
+  --secondary-color: rgb(29, 78, 216);
+  --nav-color: rgba(24, 69, 195, 0.94);
   --background-color: #f1f1f1;
 }
 
