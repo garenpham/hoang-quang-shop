@@ -34,11 +34,11 @@ const HomeList = (props: Props) => {
         id={props.title}
         className={style.wrapper}
         onClick={() => props.setToggle(false)}>
-        <div className="flex flex-col text-center mt-[2rem] uppercase lg:text-4xl lg:gap-[.5rem]">
-          <p className="italic text-[--primary-color]">
+        <div className="flex flex-col text-center mt-[2rem] uppercase lg:gap-[.5rem]">
+          <p className="italic text-[--primary-color] lg:text-4xl">
             Chuyên kinh doanh. Sửa chữa. Lắp đặt:
           </p>
-          <p className="text-[--secondary-color] font-bold">
+          <p className="text-[--secondary-color] font-bold lg:text-[2.34rem]">
             Điện nước dân dụng - Ống nước <br className="block lg:hidden" />-
             Vật liệu xây dựng
           </p>
