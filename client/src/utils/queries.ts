@@ -1,59 +1,62 @@
-export const getAllImgUrl = () => {
+export const getAllProducts = () => {
   return `*[_type=='product']{
     name,
-		type,
+    image,
     price,
-		description,
-		isGallery,	
-    image{
-      asset->{
-        url,
-      }
+    description,
+    generalType->{
+      name
+    },
+    specificType->{
+      name
     }
   }`
 }
 
-export const getAllImgGallery = () => {
-  return `*[_type=='product' && isGallery]{
+export const getHomeContent = () => {
+  return `*[_type == "generalType"] {
+    _id,
     name,
-		type,
-    price,
-		description,
-		isGallery,	
-    image{
-      asset->{
-        url,
-      }
+    "products": *[_type == "product" && generalType._ref == ^._id] {
+      _id,
+      name,
+      image,
+      price,
+      description,
+    },
+    specificTypes[]->{
+      name
     }
   }`
 }
 
-export const getAllImgSpecials = () => {
-  return `*[_type=='product' && isSpecial]{
+export const getGeneralTypeProducts = (name: string) => {
+  return `*[_type == "generalType" && name match '${name}'] {
+    _id,
     name,
-		type,
-    price,
-		description,
-		isGallery,	
-    image{
-      asset->{
-        url,
-      }
+    "products": *[_type == "product" && generalType._ref == ^._id] {
+      _id,
+      name,
+      image,
+      price,
+      description,
+    },
+    specificTypes[]->{
+      name
     }
   }`
 }
 
-export const getSpecificImgUrl = (name: string | string[]) => {
-  return `*[_type=='product' && name match '${name}']{
+export const getSpecificTypeProducts = (name: string) => {
+  return `*[_type == "specificType" && name match '${name}] {
+    _id,
     name,
-		type,
-    price,
-		description,
-		isGallery,	
-    image{
-      asset->{
-        url,
-      }
+    "products": *[_type == "product" && specificType._ref == ^._id] {
+      _id,
+      name,
+      image,
+      price,
+      description,
     }
   }`
 }
