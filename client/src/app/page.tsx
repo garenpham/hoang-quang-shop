@@ -1,39 +1,19 @@
-"use client";
+import HomePage from '@/components/Home/HomePage'
 
-import Contact from '@/components/Contact/Contact'
-import Footer from '@/components/Footer/Footer'
-import Header from '@/components/Header/Header'
-import HomeList from '@/components/HomeList/HomeList'
-import Menu from '@/components/Menu/Menu'
-import { useState } from 'react'
+async function getData() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/home`)
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
 
-export default function Home() {
-  const [toggle, setToggle] = useState(false)
-
-  const categories = [
-    'Công tắc, ổ cắm',
-    'Dây cáp điện',
-    'Ống điện và phụ kiện',
-    'Quạt điện',
-  ]
-
-  const setToggleFn = (value: boolean) => {
-    setToggle(value)
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data')
   }
 
-  return (
-    <>
-      {toggle && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-80 z-10 touch-none"
-          onClick={() => setToggle(false)}></div>
-      )}
+  return res.json()
+}
 
-      <Header />
-      <Menu toggle={toggle} setToggleFn={setToggleFn} />
-      <HomeList title="Thiết bị Điện" categories={categories} />
-      <Contact />
-      <Footer />
-    </>
-  )
+export default async function Home() {
+  const data = await getData()
+  return <HomePage data={data} />
 }

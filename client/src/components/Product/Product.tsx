@@ -36,3 +36,13 @@ const Product = (props: Props) => {
 }
 
 export default Product
+
+
+  // useLayoutEffect(() => {
+  //   fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/home`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       // console.log(data)
+  //       // console.log(urlFor(data[0].products[0].image).url())
+  //     })
+  // }, [])

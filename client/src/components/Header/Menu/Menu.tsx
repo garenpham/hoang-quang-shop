@@ -4,7 +4,7 @@ import NearMeIcon from '@mui/icons-material/NearMe'
 import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk'
 import Link from 'next/link'
 import React from 'react'
-import styles from '../assets/globalStyles'
+import styles from '../../assets/globalStyles'
 
 const MenuXl = () => {
   const style = {

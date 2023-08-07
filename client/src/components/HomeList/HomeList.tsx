@@ -1,29 +1,23 @@
 'use client'
 
-import { urlFor } from '@/utils/client'
+import { HomeProductsDto } from '@/interfaces/homeProducts.dto'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import Link from 'next/link'
-import { useLayoutEffect, useState } from 'react'
+import { useState } from 'react'
 import Product from '../Product/Product'
 import styles from '../assets/globalStyles'
 
 type Props = {
   title: string
   categories: string[]
+  data: HomeProductsDto
 }
 
-const HomeList = ({ title, categories }: Props) => {
+const HomeList = ({ title, categories, data }: Props) => {
   const [categoryToggle, setCategoryToggle] = useState(false)
 
-  useLayoutEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/home`)
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data)
-        // console.log(urlFor(data[0].products[0].image).url())
-      })
-  }, [])
+  // console.log(data)
 
   const style = {
     wrapper: `px-[--root-margin] pb-[1.4rem]`,

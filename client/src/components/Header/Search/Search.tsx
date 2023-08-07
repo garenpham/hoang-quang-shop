@@ -1,6 +1,6 @@
 import SearchIcon from '@mui/icons-material/Search'
 import React from 'react'
-import styles from '../assets/globalStyles'
+import styles from '../../assets/globalStyles'
 
 const style = {
   wrapper: `w-full lg:w-auto h-[2rem] lg:h-[3rem] m-auto text-[0.6rem] lg:text-sm flex lg:hover:scale-105 ${styles.hover_click}`,

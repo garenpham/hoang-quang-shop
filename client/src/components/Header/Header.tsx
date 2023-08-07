@@ -1,7 +1,7 @@
 import Logo from '@/components/assets/Logo'
 import React from 'react'
-import Nav from '../Nav/Nav'
-import Search from '../Search/Search'
+import Nav from './Nav/Nav'
+import Search from './Search/Search'
 
 const style = {
   wrapper: `flex flex-col lg:flex-row justify-center lg:justify-between pt-[1rem] pb-0 lg:pb-[1.6rem] px-[--root-margin]`,
