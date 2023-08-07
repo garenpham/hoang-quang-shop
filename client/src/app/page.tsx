@@ -5,17 +5,10 @@ import Footer from '@/components/Footer/Footer'
 import Header from '@/components/Header/Header'
 import HomeList from '@/components/HomeList/HomeList'
 import Menu from '@/components/Menu/Menu'
-import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 
 export default function Home() {
   const [toggle, setToggle] = useState(false)
-
-  const pathname = usePathname()
-  useEffect(() => {
-    setToggle(false)
-    console.log(pathname)
-  }, [pathname])
 
   const categories = [
     'Công tắc, ổ cắm',
@@ -29,6 +22,13 @@ export default function Home() {
   }
 
   // console.log(toggle);
+  useLayoutEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/home`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+      })
+  }, [])
 
   return (
     <>

@@ -21,7 +21,7 @@ const HomeList = ({ title, categories }: Props) => {
     titleContainer: `rounded-br-full bg-[--primary-color] px-[1.8rem] h-[3rem] flex flex-col justify-center uppercase text-xl text-center text-white font-bold`,
     categoryContainer: `${
       categoryToggle ? 'flex' : 'hidden lg:flex'
-    } flex-col lg:flex-row text-sm items-start lg:items-center group`,
+    } flex-col lg:flex-row text-sm items-start lg:items-center`,
     productContainer: `flex flex-wrap gap-[1rem] justify-center lg:justify-start`,
   }
 
