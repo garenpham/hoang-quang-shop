@@ -5,7 +5,7 @@ import Footer from '@/components/Footer/Footer'
 import Header from '@/components/Header/Header'
 import HomeList from '@/components/HomeList/HomeList'
 import Menu from '@/components/Menu/Menu'
-import { useLayoutEffect, useState } from 'react'
+import { useState } from 'react'
 
 export default function Home() {
   const [toggle, setToggle] = useState(false)
@@ -20,15 +20,6 @@ export default function Home() {
   const setToggleFn = (value: boolean) => {
     setToggle(value)
   }
-
-  // console.log(toggle);
-  useLayoutEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/home`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data)
-      })
-  }, [])
 
   return (
     <>

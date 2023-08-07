@@ -1,7 +1,10 @@
+'use client'
+
+import { urlFor } from '@/utils/client'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import Product from '../Product/Product'
 import styles from '../assets/globalStyles'
 
@@ -12,6 +15,15 @@ type Props = {
 
 const HomeList = ({ title, categories }: Props) => {
   const [categoryToggle, setCategoryToggle] = useState(false)
+
+  useLayoutEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/home`)
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data)
+        // console.log(urlFor(data[0].products[0].image).url())
+      })
+  }, [])
 
   const style = {
     wrapper: `px-[--root-margin] pb-[1.4rem]`,
