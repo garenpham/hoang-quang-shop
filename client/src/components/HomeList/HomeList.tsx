@@ -1,6 +1,5 @@
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import Product from '../Product/Product'
@@ -9,11 +8,9 @@ import styles from '../assets/globalStyles'
 type Props = {
   title: string
   categories: string[]
-
-  setToggle: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const HomeList = (props: Props) => {
+const HomeList = ({ title, categories }: Props) => {
   const [categoryToggle, setCategoryToggle] = useState(false)
 
   const style = {
@@ -30,10 +27,7 @@ const HomeList = (props: Props) => {
 
   return (
     <>
-      <article
-        id={props.title}
-        className={style.wrapper}
-        onClick={() => props.setToggle(false)}>
+      <article id={title} className={style.wrapper}>
         <div className="flex flex-col text-center mt-[2rem] uppercase lg:gap-[.5rem]">
           <p className="italic text-[--primary-color] lg:text-4xl">
             Chuyên kinh doanh. Sửa chữa. Lắp đặt:
@@ -47,9 +41,7 @@ const HomeList = (props: Props) => {
         <div className={style.menu}>
           <div className="flex justify-between">
             <Link href="#" className={style.titleContainer}>
-              <h2 className={`pr-[.4rem] ${styles.menuTitle}`}>
-                {props.title}
-              </h2>
+              <h2 className={`pr-[.4rem] ${styles.menuTitle}`}>{title}</h2>
             </Link>
             <div
               className="flex lg:hidden bg-[--background-color] h-[3rem] flex-col justify-center"
@@ -65,7 +57,7 @@ const HomeList = (props: Props) => {
           </div>
 
           <div className={style.categoryContainer}>
-            {props.categories.map((category) => (
+            {categories.map((category) => (
               <Link
                 href="#"
                 key={category}

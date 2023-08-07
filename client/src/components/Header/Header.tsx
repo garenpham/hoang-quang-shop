@@ -8,13 +8,11 @@ const style = {
   logo_search: `flex gap-8 flex-col lg:flex-row`,
 }
 
-type Props = {
-  setToggle: React.Dispatch<React.SetStateAction<boolean>>
-}
+type Props = {}
 
 const Header = (props: Props) => {
   return (
-    <header className={style.wrapper} onClick={() => props.setToggle(false)}>
+    <header className={style.wrapper}>
       <div className={style.logo_search}>
         <Logo />
         <Search />

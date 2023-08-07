@@ -1,7 +1,9 @@
+import { closeOnClickOutside } from '@/utils/closeOnClickOutside'
 import MenuIcon from '@mui/icons-material/Menu'
 import NearMeIcon from '@mui/icons-material/NearMe'
 import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk'
 import Link from 'next/link'
+import React from 'react'
 import styles from '../assets/globalStyles'
 
 const MenuXl = () => {
@@ -34,10 +36,16 @@ const MenuXl = () => {
 
 type Props = {
   toggle: boolean
-  setToggle: React.Dispatch<React.SetStateAction<boolean>>
+  setToggleFn: (value: boolean) => void
 }
 
-const MenuBar = (props: Props) => {
+type menuProps = {
+  toggle: boolean
+  setToggleFn: (value: boolean) => void
+  menuRef: React.RefObject<HTMLDivElement>
+}
+
+const MenuBar = (props: menuProps) => {
   const closed = 'left-[100vw]'
   const open = 'left-[26vw]'
 
@@ -53,7 +61,7 @@ const MenuBar = (props: Props) => {
     line: `bg-white h-[2px] my-4`,
   }
   return (
-    <div className={style.wrapper}>
+    <div ref={props.menuRef} className={style.wrapper}>
       <Link href="tel:0938460990" className={style.hotlineItem}>
         <PhoneInTalkIcon className={style.hotlineIcon} />{' '}
         <span className="mr-1">Hotline:</span>
@@ -62,7 +70,7 @@ const MenuBar = (props: Props) => {
 
       <ul className="text-lg">
         <li className={style.listItem}>
-          <Link href="#" onClick={() => props.setToggle(false)}>
+          <Link href="#" onClick={() => props.setToggleFn(false)}>
             Trang chủ
           </Link>
         </li>
@@ -70,13 +78,13 @@ const MenuBar = (props: Props) => {
         <li className={style.listItem}>Sản phẩm</li>
         <div className={style.line} />
         <li className={style.listItem}>
-          <Link href="/about" onClick={() => props.setToggle(false)}>
+          <Link href="/about" onClick={() => props.setToggleFn(false)}>
             Giới thiệu{' '}
           </Link>
         </li>
         <div className={style.line} />
         <li className={style.listItem}>
-          <Link href="#contact" onClick={() => props.setToggle(false)}>
+          <Link href="#contact" onClick={() => props.setToggleFn(false)}>
             Liên hệ{' '}
           </Link>
         </li>
@@ -95,14 +103,23 @@ const MenuBar = (props: Props) => {
 }
 
 const MenuSm = (props: Props) => {
+  const menuRef = React.useRef<HTMLDivElement>(null)
+  const handleOnClick = () => {
+    props.setToggleFn(!props.toggle)
+    closeOnClickOutside(menuRef, () => props.setToggleFn(false))
+  }
   return (
     <>
       <div
         className="absolute lg:hidden top-[2.3rem] right-[--root-margin]"
-        onClick={() => props.setToggle(!props.toggle)}>
+        onClick={handleOnClick}>
         <MenuIcon sx={{ fontSize: 30 }} />
       </div>
-      <MenuBar toggle={props.toggle} setToggle={props.setToggle} />
+      <MenuBar
+        menuRef={menuRef}
+        toggle={props.toggle}
+        setToggleFn={props.setToggleFn}
+      />
     </>
   )
 }
@@ -111,7 +128,7 @@ const Menu = (props: Props) => {
   return (
     <>
       <MenuXl />
-      <MenuSm toggle={props.toggle} setToggle={props.setToggle} />
+      <MenuSm toggle={props.toggle} setToggleFn={props.setToggleFn} />
     </>
   )
 }

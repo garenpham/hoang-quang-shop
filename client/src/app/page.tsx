@@ -24,6 +24,10 @@ export default function Home() {
     'Quạt điện',
   ]
 
+  const setToggleFn = (value: boolean) => {
+    setToggle(value)
+  }
+
   // console.log(toggle);
 
   return (
@@ -34,15 +38,11 @@ export default function Home() {
           onClick={() => setToggle(false)}></div>
       )}
 
-      <Header setToggle={setToggle} />
-      <Menu toggle={toggle} setToggle={setToggle} />
-      <HomeList
-        title="Thiết bị Điện"
-        categories={categories}
-        setToggle={setToggle}
-      />
-      <Contact setToggle={setToggle} />
-      <Footer setToggle={setToggle} />
+      <Header />
+      <Menu toggle={toggle} setToggleFn={setToggleFn} />
+      <HomeList title="Thiết bị Điện" categories={categories} />
+      <Contact />
+      <Footer />
     </>
   )
 }

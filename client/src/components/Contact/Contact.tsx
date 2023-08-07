@@ -7,9 +7,7 @@ import {
   Typography,
 } from '@mui/material'
 
-type Props = {
-  setToggle: React.Dispatch<React.SetStateAction<boolean>>
-}
+type Props = {}
 
 const style = {
   wrapper: `w-full h-[1000px] lg:h-[500px] bg-white px-[--root-margin] flex flex-col lg:flex-row gap-4`,
@@ -19,27 +17,24 @@ const style = {
 
 const Map = (props: Props) => {
   return (
-    <article
-      id="contact"
-      className={style.wrapper}
-      onClick={() => props.setToggle(false)}>
+    <article id="contact" className={style.wrapper}>
       <Grid
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          maxWidth: "100%",
-          "@media(min-width:1280px)": { maxWidth: "50%" },
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          maxWidth: '100%',
+          '@media(min-width:1280px)': { maxWidth: '50%' },
         }}>
-        <Card style={{ boxShadow: "none" }}>
+        <Card style={{ boxShadow: 'none' }}>
           <CardContent>
             <Typography
               gutterBottom
               variant="h5"
               style={{
-                fontWeight: "bold",
+                fontWeight: 'bold',
                 fontSize: 40,
-                color: "var(--primary-color)",
+                color: 'var(--primary-color)',
               }}>
               Liên Hệ
             </Typography>
@@ -48,7 +43,7 @@ const Map = (props: Props) => {
               color="textSecondary"
               component="p"
               gutterBottom
-              style={{ paddingBottom: "2rem" }}>
+              style={{ paddingBottom: '2rem' }}>
               Vui lòng để lại tin nhắn. Chúng tôi sẽ liên hệ lại ngay trong
               ngày.
             </Typography>
@@ -90,9 +85,9 @@ const Map = (props: Props) => {
                     variant="contained"
                     fullWidth
                     sx={{
-                      backgroundColor: "var(--primary-color)!important",
-                      "&:hover": {
-                        backgroundColor: "var(--secondary-color)!important",
+                      backgroundColor: 'var(--primary-color)!important',
+                      '&:hover': {
+                        backgroundColor: 'var(--secondary-color)!important',
                       },
                     }}>
                     Gửi tin nhắn
@@ -115,7 +110,7 @@ const Map = (props: Props) => {
           className={style.map}></iframe>
       </div>
     </article>
-  );
-};
+  )
+}
 
 export default Map;
