@@ -1,13 +1,16 @@
 export const getAllProducts = () => {
   return `*[_type=='product']{
+    _id,
     name,
     image,
     price,
     description,
     generalType->{
+      _id,
       name
     },
     specificType->{
+      _id,
       name
     }
   }`
@@ -25,6 +28,7 @@ export const getHomeContent = () => {
       description,
     },
     specificTypes[]->{
+      _id,
       name
     }
   }`
@@ -42,6 +46,7 @@ export const getGeneralTypeProducts = (name: string) => {
       description,
     },
     specificTypes[]->{
+      _id,
       name
     }
   }`
