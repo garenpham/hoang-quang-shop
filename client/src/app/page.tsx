@@ -1,6 +1,6 @@
 import HomePage from '@/components/Home/HomePage'
 
-async function getData() {
+const getData = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/home`)
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
@@ -13,6 +13,7 @@ async function getData() {
   return res.json()
 }
 
+export const revalidate = 0
 export default async function Home() {
   const data = await getData()
   return <HomePage dataList={data} />
