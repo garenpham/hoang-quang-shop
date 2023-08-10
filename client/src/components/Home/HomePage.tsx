@@ -9,11 +9,13 @@ import { HomeProductsDto } from '@/interfaces/homeProducts.dto'
 import { useState } from 'react'
 
 type Props = {
-  data: HomeProductsDto
+  dataList: HomeProductsDto[]
 }
 
-const HomePage = ({ data }: Props) => {
+const HomePage = ({ dataList }: Props) => {
   const [toggle, setToggle] = useState(false)
+
+  console.log(dataList)
 
   const categories = [
     'Công tắc, ổ cắm',
@@ -36,7 +38,17 @@ const HomePage = ({ data }: Props) => {
 
       <Header />
       <Menu toggle={toggle} setToggleFn={setToggleFn} />
-      <HomeList title="Thiết bị Điện" categories={categories} data={data} />
+      {dataList.map((data) => (
+        <div key={data._id}>
+          {data.products.length > 0 && (
+            <HomeList
+              title="Thiết bị Điện"
+              categories={categories}
+              data={data}
+            />
+          )}
+        </div>
+      ))}
       <Contact />
       <Footer />
     </>

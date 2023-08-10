@@ -14,26 +14,26 @@ type Props = {
   data: HomeProductsDto
 }
 
-const HomeList = ({ title, categories, data }: Props) => {
+const HomeList = ({ data }: Props) => {
   const [categoryToggle, setCategoryToggle] = useState(false)
 
-  // console.log(data)
+  const { name, products, specificTypes } = data
 
   const style = {
     wrapper: `px-[--root-margin] pb-[1.4rem]`,
     img: `relative w-[100vw] h-[100vh] `,
     line: `bg-[--primary-color] h-[3.4px] mt-[2rem] mb-[2px]`,
-    menu: `flex flex-col lg:flex-row justify-between mb-[.4rem]`,
+    menu: `flex flex-col lg:flex-row justify-between mb-[.4rem] lg:items-center`,
     titleContainer: `rounded-br-full bg-[--primary-color] px-[1.8rem] h-[3rem] flex flex-col justify-center uppercase text-xl text-center text-white font-bold`,
     categoryContainer: `${
       categoryToggle ? 'flex' : 'hidden lg:flex'
-    } flex-col lg:flex-row text-sm items-start lg:items-center`,
+    } flex-col lg:flex-row text-sm items-start`,
     productContainer: `flex flex-wrap gap-[1rem] justify-center lg:justify-start`,
   }
 
   return (
     <>
-      <article id={title} className={style.wrapper}>
+      <article id={name} className={style.wrapper}>
         <div className="flex flex-col text-center mt-[2rem] uppercase lg:gap-[.5rem]">
           <p className="italic text-[--primary-color] lg:text-4xl">
             Chuyên kinh doanh. Sửa chữa. Lắp đặt:
@@ -47,7 +47,7 @@ const HomeList = ({ title, categories, data }: Props) => {
         <div className={style.menu}>
           <div className="flex justify-between">
             <Link href="#" className={style.titleContainer}>
-              <h2 className={`pr-[.4rem] ${styles.menuTitle}`}>{title}</h2>
+              <h2 className={`pr-[.4rem] ${styles.menuTitle}`}>{name}</h2>
             </Link>
             <div
               className="flex lg:hidden bg-[--background-color] h-[3rem] flex-col justify-center"
@@ -63,12 +63,12 @@ const HomeList = ({ title, categories, data }: Props) => {
           </div>
 
           <div className={style.categoryContainer}>
-            {categories.map((category) => (
+            {specificTypes.map((category) => (
               <Link
                 href="#"
-                key={category}
-                className={`w-full lg:w-auto mr-4 py-3 hover:text-[--secondary-color] hover:scale-105 active:scale-95 ${styles.hover_click} border-b-[2px] border-dotted lg:border-none`}>
-                {category}
+                key={category._id}
+                className={`w-full lg:w-auto mr-4 py-3 lg:py-0 hover:text-[--secondary-color] hover:scale-105 active:scale-95 ${styles.hover_click} border-b-[2px] border-dotted lg:border-none`}>
+                <p className="first-letter:uppercase">{category.name}</p>
               </Link>
             ))}
 
@@ -82,13 +82,9 @@ const HomeList = ({ title, categories, data }: Props) => {
         </div>
 
         <div className={style.productContainer}>
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
+          {products.map((product) => (
+            <Product key={product._id} product={product} />
+          ))}
         </div>
       </article>
     </>
