@@ -1,4 +1,5 @@
 import { HomeProduct } from '@/interfaces/homeProducts.dto'
+import { urlFor } from '@/utils/client'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -33,7 +34,7 @@ const Product = ({ product }: Props) => {
     <Link href="#" className={style.layout}>
       <div className={style.container}>
         <Image
-          src="https://diennuocvantu.com/upload/product/day-cap-dien-cv4-52.jpg"
+          src={urlFor(image).url()}
           alt={name}
           height={0}
           width={0}
@@ -55,12 +56,3 @@ const Product = ({ product }: Props) => {
 }
 
 export default Product
-
-// useLayoutEffect(() => {
-//   fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/home`)
-//     .then((res) => res.json())
-//     .then((data) => {
-//       // console.log(data)
-//       // console.log(urlFor(data[0].products[0].image).url())
-//     })
-// }, [])
