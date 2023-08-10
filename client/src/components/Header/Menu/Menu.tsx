@@ -11,14 +11,14 @@ const MenuXl = () => {
     wrapper: `hidden lg:flex px-[--root-margin] bg-gradient-to-r from-[--secondary-color] via-sky-500 via-40% to-[--secondary-color] text-white uppercase text-2xl font-semibold gap-[4rem] h-14 items-center`,
     item: `hover:text-[#FF0000] hover:scale-105 active:scale-95 ${styles.hover_click}`,
     menuItem: `h-full flex flex-col justify-center bg-[--primary-color] px-4 rounded-r-full -mr-8`,
-    menuItem__text: `${styles.menuTitle} pr-[1rem] pt-1`,
+    menuItem__text: `${styles.menuTitle} pr-[1rem] flex items-center`,
   }
   return (
     <section id="menu" className={style.wrapper}>
       <Link href="#" className={style.menuItem}>
         <div className={style.menuItem__text}>
           {' '}
-          <MenuIcon className="text-[1.4em] pb-1" /> &nbsp; Mục lục sản phẩm
+          <MenuIcon sx={{ fontSize: 34 }} /> &nbsp; Mục lục sản phẩm
         </div>
       </Link>
       <Link href="#" className={style.item}>
