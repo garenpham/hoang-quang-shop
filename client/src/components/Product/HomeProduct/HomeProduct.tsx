@@ -3,7 +3,7 @@ import { urlFor } from '@/utils/client'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import styles from '../assets/globalStyles'
+import styles from '../../assets/globalStyles'
 
 type Props = {
   product: HomeProduct

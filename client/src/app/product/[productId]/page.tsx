@@ -1,4 +1,4 @@
-import ProductDetail from '@/components/Product/ProductDetail'
+import ProductDetail from '@/components/Product/ProductDetail/ProductDetail'
 import { BASE_URL } from '@/constants/urls'
 import React from 'react'
 

@@ -1,6 +1,7 @@
 export type productDetail = {
   _id: string
   name: string
+  isAvailable: boolean
   image: {
     _type: string
     asset: {
@@ -10,12 +11,6 @@ export type productDetail = {
   }
   price: string
   description: string[]
-  generalType: {
-    _id: string
-    name: string
-  }
-  specificType: {
-    _id: string
-    name: string
-  }
+  generalType: string
+  specificType: string
 }

@@ -5,12 +5,10 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import Link from 'next/link'
 import { useState } from 'react'
-import HomeProduct from '../Product/HomeProduct'
+import HomeProduct from '../Product/HomeProduct/HomeProduct'
 import styles from '../assets/globalStyles'
 
 type Props = {
-  title: string
-  categories: string[]
   data: HomeProductsDto
 }
 
