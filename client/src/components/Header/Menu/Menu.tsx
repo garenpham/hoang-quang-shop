@@ -1,4 +1,5 @@
 import { closeOnClickOutside } from '@/utils/closeOnClickOutside'
+import { useWindowSize } from '@/utils/useWindowSize'
 import MenuIcon from '@mui/icons-material/Menu'
 import NearMeIcon from '@mui/icons-material/NearMe'
 import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk'
@@ -125,10 +126,15 @@ const MenuSm = (props: Props) => {
 }
 
 const Menu = (props: Props) => {
+  const { width } = useWindowSize()
+  const isMobile = (width as number) < 1024
   return (
     <>
-      <MenuXl />
-      <MenuSm toggle={props.toggle} setToggleFn={props.setToggleFn} />
+      {isMobile ? (
+        <MenuSm toggle={props.toggle} setToggleFn={props.setToggleFn} />
+      ) : (
+        <MenuXl />
+      )}
     </>
   )
 }

@@ -10,8 +10,8 @@ type Props = {
 }
 
 const style = {
-  layout: `w-full max-w-[45%] lg:max-w-[23.5%]`,
-  container: `group rounded-2xl shadow-xl lg:shadow-none hover:shadow-xl p-4 hover:scale-105 active:scale-100 ${styles.hover_click}`,
+  layout: `w-full max-w-[47%] lg:max-w-[23.5%]`,
+  container: `group lg:rounded-2xl shadow lg:shadow-none hover:shadow-xl p-1 lg:p-4 hover:scale-105 active:scale-100 ${styles.hover_click}`,
 }
 
 const HomeProduct = ({ product }: Props) => {
