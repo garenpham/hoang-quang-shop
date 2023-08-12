@@ -1,7 +1,9 @@
 import HomePage from '@/components/Home/HomePage'
+import { BASE_URL } from '@/constants/urls'
 
+export const revalidate = 0
 const getData = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/home`)
+  const res = await fetch(`${BASE_URL}/home`)
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
 
@@ -13,7 +15,6 @@ const getData = async () => {
   return res.json()
 }
 
-export const revalidate = 0
 export default async function Home() {
   const data = await getData()
   return <HomePage dataList={data} />

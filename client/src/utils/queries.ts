@@ -1,5 +1,23 @@
 export const getAllProducts = () => {
-  return `*[_type=='product']{
+  return `*[_type == 'product']{
+    _id,
+    name,
+    image,
+    price,
+    description,
+    generalType->{
+      _id,
+      name
+    },
+    specificType->{
+      _id,
+      name
+    }
+  }`
+}
+
+export const getProductDetail = (id: string | string[]) => {
+  return `*[_type == 'product' && _id == '${id}']{
     _id,
     name,
     image,

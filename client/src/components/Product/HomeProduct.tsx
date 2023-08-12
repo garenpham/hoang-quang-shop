@@ -14,8 +14,8 @@ const style = {
   container: `group rounded-2xl shadow-xl lg:shadow-none hover:shadow-xl p-4 hover:scale-105 active:scale-100 ${styles.hover_click}`,
 }
 
-const Product = ({ product }: Props) => {
-  const { image, name, price } = product
+const HomeProduct = ({ product }: Props) => {
+  const { _id, image, name, price } = product
   const formatPrice = (price: string) => {
     let formattedPrice = ''
     let count = 0
@@ -31,7 +31,7 @@ const Product = ({ product }: Props) => {
   }
 
   return (
-    <Link href="#" className={style.layout}>
+    <Link href={`/product/${_id}`} className={style.layout}>
       <div className={style.container}>
         <Image
           src={urlFor(image).url()}
@@ -55,4 +55,4 @@ const Product = ({ product }: Props) => {
   )
 }
 
-export default Product
+export default HomeProduct

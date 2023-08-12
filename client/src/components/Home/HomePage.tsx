@@ -15,7 +15,7 @@ type Props = {
 const HomePage = ({ dataList }: Props) => {
   const [toggle, setToggle] = useState(false)
 
-  console.log(dataList)
+  //console.log(dataList)
 
   const categories = [
     'Công tắc, ổ cắm',

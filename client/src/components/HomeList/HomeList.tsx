@@ -5,7 +5,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import Link from 'next/link'
 import { useState } from 'react'
-import Product from '../Product/Product'
+import HomeProduct from '../Product/HomeProduct'
 import styles from '../assets/globalStyles'
 
 type Props = {
@@ -83,7 +83,7 @@ const HomeList = ({ data }: Props) => {
 
         <div className={style.productContainer}>
           {products.map((product) => (
-            <Product key={product._id} product={product} />
+            <HomeProduct key={product._id} product={product} />
           ))}
         </div>
       </article>
