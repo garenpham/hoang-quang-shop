@@ -10,7 +10,7 @@ type Props = {
 }
 
 const ProductDetail = ({ productDetail }: Props) => {
-  console.log(productDetail)
+  //console.log(productDetail)
   return (
     <>
       <Header />

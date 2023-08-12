@@ -17,7 +17,12 @@ export default {
       type: 'reference',
       to: {type: 'specificType'},
     },
-    {name: 'image', title: 'Hình ảnh', type: 'image', options: {hotspot: true}},
+    {
+      name: 'images',
+      title: 'Hình ảnh',
+      type: 'array',
+      of: [{type: 'image', options: {hotspot: true}}],
+    },
     {name: 'price', title: 'Giá cả', type: 'number'},
     {
       name: 'description',

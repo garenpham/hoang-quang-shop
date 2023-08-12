@@ -1,13 +1,13 @@
 export type HomeProduct = {
   _id: string
   name: string
-  image: {
+  images: {
     _type: string
     asset: {
       _ref: string
       _type: string
     }
-  }
+  }[]
   price: string
   description: string[]
 }

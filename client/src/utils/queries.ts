@@ -3,7 +3,7 @@ export const getAllProducts = () => {
     _id,
     name,
     isAvailable,
-    image,
+    images,
     price,
     description,
     "generalType":generalType->name,
@@ -16,7 +16,7 @@ export const getProductDetail = (id: string | string[]) => {
     _id,
     name,
     isAvailable,
-    image,
+    images,
     price,
     description,
     "generalType":generalType->name,
@@ -31,7 +31,7 @@ export const getHomeContent = () => {
     "products": *[_type == "product" && generalType._ref == ^._id] {
       _id,
       name,
-      image,
+      images,
       price,
       description,
     },
@@ -49,7 +49,7 @@ export const getGeneralTypeProducts = (name: string) => {
     "products": *[_type == "product" && generalType._ref == ^._id] {
       _id,
       name,
-      image,
+      images,
       price,
       description,
     },
@@ -67,7 +67,7 @@ export const getSpecificTypeProducts = (name: string) => {
     "products": *[_type == "product" && specificType._ref == ^._id] {
       _id,
       name,
-      image,
+      images,
       price,
       description,
     }

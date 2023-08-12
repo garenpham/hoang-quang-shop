@@ -15,7 +15,7 @@ const style = {
 }
 
 const HomeProduct = ({ product }: Props) => {
-  const { _id, image, name, price } = product
+  const { _id, images, name, price } = product
   const formatPrice = (price: string) => {
     let formattedPrice = ''
     let count = 0
@@ -34,11 +34,11 @@ const HomeProduct = ({ product }: Props) => {
     <Link href={`/product/${_id}`} className={style.layout}>
       <div className={style.container}>
         <Image
-          src={urlFor(image).url()}
+          src={urlFor(images[0]).url()}
           alt={name}
           height={0}
           width={0}
-          sizes="100vw"
+          sizes="100%"
           className="w-full h-auto pb-4"
         />
         <div className="">
