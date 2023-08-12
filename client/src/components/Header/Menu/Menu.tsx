@@ -1,10 +1,10 @@
-import { closeOnClickOutside } from '@/utils/closeOnClickOutside'
 import { useWindowSize } from '@/utils/useWindowSize'
 import MenuIcon from '@mui/icons-material/Menu'
 import NearMeIcon from '@mui/icons-material/NearMe'
 import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk'
 import Link from 'next/link'
 import React from 'react'
+import { IoClose } from 'react-icons/io5'
 import styles from '../../assets/globalStyles'
 
 const MenuXl = () => {
@@ -40,13 +40,7 @@ type Props = {
   setToggleFn: (value: boolean) => void
 }
 
-type menuProps = {
-  toggle: boolean
-  setToggleFn: (value: boolean) => void
-  menuRef: React.RefObject<HTMLDivElement>
-}
-
-const MenuBar = (props: menuProps) => {
+const MenuBar = (props: Props) => {
   const closed = 'left-[100vw]'
   const open = 'left-[26vw]'
 
@@ -62,7 +56,7 @@ const MenuBar = (props: menuProps) => {
     line: `bg-white h-[2px] my-4`,
   }
   return (
-    <div ref={props.menuRef} className={style.wrapper}>
+    <div className={style.wrapper}>
       <Link href="tel:0938460990" className={style.hotlineItem}>
         <PhoneInTalkIcon className={style.hotlineIcon} />{' '}
         <span className="mr-1">Hotline:</span>
@@ -103,24 +97,22 @@ const MenuBar = (props: menuProps) => {
   )
 }
 
-const MenuSm = (props: Props) => {
-  const menuRef = React.useRef<HTMLDivElement>(null)
+const MenuSm = ({ toggle, setToggleFn }: Props) => {
   const handleOnClick = () => {
-    props.setToggleFn(!props.toggle)
-    closeOnClickOutside(menuRef, () => props.setToggleFn(false))
+    setToggleFn(!toggle)
   }
   return (
     <>
       <div
-        className="absolute lg:hidden top-[2.3rem] right-[--root-margin]"
+        className="fixed lg:hidden bottom-[2rem] right-[--root-margin] z-40 bg-black/20 rounded-full p-[0.34rem]"
         onClick={handleOnClick}>
-        <MenuIcon sx={{ fontSize: 30 }} />
+        {toggle ? (
+          <IoClose className="text-[30px]" />
+        ) : (
+          <MenuIcon sx={{ fontSize: 30 }} />
+        )}
       </div>
-      <MenuBar
-        menuRef={menuRef}
-        toggle={props.toggle}
-        setToggleFn={props.setToggleFn}
-      />
+      <MenuBar toggle={toggle} setToggleFn={setToggleFn} />
     </>
   )
 }
