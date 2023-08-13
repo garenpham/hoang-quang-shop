@@ -22,7 +22,6 @@ const ProductContent = ({ productDetail }: Props) => {
     images,
     price,
     isAvailable,
-    description,
     manufacturer,
   } = productDetail
   const style = {
@@ -60,11 +59,11 @@ const ProductContent = ({ productDetail }: Props) => {
         </div>
         <div className="basis-[40%] flex flex-col gap-[24px]">
           {price ? (
-            <div className="text-base lg:text-3xl font-bold text-[--primary-color]">
+            <div className="text-base lg:text-4xl font-bold text-[--primary-color]">
               {formatPrice(price)} <span className="underline">đ</span>{' '}
             </div>
           ) : (
-            <div className="text-base lg:text-3xl font-bold text-[--primary-color]">
+            <div className="text-base lg:text-4xl font-bold text-[--primary-color]">
               Liên Hệ
             </div>
           )}
@@ -89,7 +88,7 @@ const ProductContent = ({ productDetail }: Props) => {
           </div>
           <div className={style.line} />
           <div className="flex items-center gap-[8px]">
-            Gọi đặt mua:{' '}
+            <span className="font-semibold">Gọi đặt mua:</span>{' '}
             <Link
               href="tel:0938460990"
               className="text-[--primary-color] font-bold text-[20px]">
