@@ -9,13 +9,11 @@ type Props = {
 const ProductDescription = ({ productDetail }: Props) => {
   const { description } = productDetail
   return (
-    <>
-      <div className="mt-[64px]">
-        <div className="text-3xl font-semibold uppercase">
-          <div className={`h-[1px] w-full bg-gray-300`} />
-          <div className="border-t-[2px] border-[--secondary-color] w-fit pt-[14px]">
-            Thông tin sản phẩm
-          </div>
+    <div className="my-[64px]">
+      <div className="text-3xl font-semibold uppercase">
+        <div className={`h-[1px] w-full bg-gray-300`} />
+        <div className="border-t-[2px] border-[--secondary-color] w-fit pt-[14px]">
+          Thông tin sản phẩm
         </div>
       </div>
 
@@ -26,7 +24,7 @@ const ProductDescription = ({ productDetail }: Props) => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   )
 }
 

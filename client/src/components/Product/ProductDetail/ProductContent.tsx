@@ -75,7 +75,7 @@ const ProductContent = ({ productDetail }: Props) => {
               )}
             </div>
           ))}
-          <div className="w-full flex gap-[1rem] overflow-x-scroll">
+          <div className="w-full flex overflow-x-scroll">
             {images.map((image, idx) => (
               <Image
                 key={idx}
@@ -86,8 +86,8 @@ const ProductContent = ({ productDetail }: Props) => {
                 width={0}
                 sizes="100%"
                 onClick={() => setSlide(idx)}
-                className={`mt-[20px] shrink-0 basis-[24%] cursor-pointer object-cover ${
-                  slide !== idx && 'opacity-80 brightness-[.6] blur-[.8px]'
+                className={`mt-[20px] shrink-0 basis-[25%] cursor-pointer object-cover ${
+                  slide !== idx && 'opacity-80 brightness-[.8] blur-[.8px]'
                 } hover:opacity-100 hover:blur-0 hover:brightness-100 ${
                   styles.hover_click
                 }`}
