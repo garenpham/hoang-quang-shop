@@ -24,6 +24,19 @@ const ProductContent = ({ productDetail }: Props) => {
     isAvailable,
     manufacturer,
   } = productDetail
+
+  const [slide, setSlide] = React.useState(0)
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1))
+      const imageFocus = document.getElementById(
+        `${slide === images.length - 1 ? 0 : slide + 1}`
+      )
+      if (imageFocus) imageFocus.scrollIntoView()
+    }, 10000)
+    return () => clearInterval(interval)
+  }, [images.length, slide])
+
   const style = {
     link: `capitalize hover:text-[--secondary-color] hover:scale-105 active:scale-100 ${styles.hover_click}`,
     line: `h-[1px] w-full bg-gray-300`,
@@ -48,14 +61,39 @@ const ProductContent = ({ productDetail }: Props) => {
       <div className="font-bold capitalize text-[40px] my-[14px]">{name}</div>
       <div className="flex gap-[10%]">
         <div className="basis-[50%]">
-          <Image
-            alt="product"
-            src={urlFor(images[0]).url()}
-            height={0}
-            width={0}
-            sizes="100%"
-            className="w-full h-auto"
-          />
+          {images.map((image, idx) => (
+            <div key={idx + 1}>
+              {slide === idx && (
+                <Image
+                  alt="product"
+                  src={urlFor(image).url()}
+                  height={0}
+                  width={0}
+                  sizes="100%"
+                  className="w-full"
+                />
+              )}
+            </div>
+          ))}
+          <div className="w-full flex gap-[1rem] overflow-x-scroll">
+            {images.map((image, idx) => (
+              <Image
+                key={idx}
+                id={`${idx}`}
+                alt={name}
+                src={urlFor(image).url()}
+                height={0}
+                width={0}
+                sizes="100%"
+                onClick={() => setSlide(idx)}
+                className={`mt-[20px] shrink-0 basis-[24%] cursor-pointer object-cover ${
+                  slide !== idx && 'opacity-80 brightness-[.6] blur-[.8px]'
+                } hover:opacity-100 hover:blur-0 hover:brightness-100 ${
+                  styles.hover_click
+                }`}
+              />
+            ))}
+          </div>
         </div>
         <div className="basis-[40%] flex flex-col gap-[24px]">
           {price ? (

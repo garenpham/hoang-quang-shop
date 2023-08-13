@@ -1,5 +1,6 @@
 'use client'
 
+import Footer from '@/components/Footer/Footer'
 import { productDetail } from '@/interfaces/productDetail.dto'
 import React from 'react'
 import Header from '../../Header/Header'
@@ -15,6 +16,7 @@ const ProductDetail = ({ productDetail }: Props) => {
     <>
       <Header />
       <ProductContent productDetail={productDetail[0]} />
+      {/* <Footer /> */}
     </>
   )
 }

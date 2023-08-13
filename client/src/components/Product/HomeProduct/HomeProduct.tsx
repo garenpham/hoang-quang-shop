@@ -27,7 +27,7 @@ const HomeProduct = ({ product }: Props) => {
           height={0}
           width={0}
           sizes="100%"
-          className="w-full h-auto pb-4"
+          className="w-full pb-4"
         />
         <div className="">
           <p className="text-xs lg:text-base group-hover:font-bold group-hover:drop-shadow-xl">
