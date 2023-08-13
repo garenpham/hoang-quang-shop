@@ -22,7 +22,7 @@ const MenuXl = () => {
           <MenuIcon sx={{ fontSize: 34 }} /> &nbsp; Mục lục sản phẩm
         </div>
       </Link>
-      <Link href="#" className={style.item}>
+      <Link href="/" className={style.item}>
         Trang chủ
       </Link>
       <Link href="/about" className={style.item}>
@@ -65,7 +65,7 @@ const MenuBar = (props: Props) => {
 
       <ul className="text-lg">
         <li className={style.listItem}>
-          <Link href="#" onClick={() => props.setToggleFn(false)}>
+          <Link href="/" onClick={() => props.setToggleFn(false)}>
             Trang chủ
           </Link>
         </li>
