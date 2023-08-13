@@ -1,9 +1,14 @@
-import React from "react";
+import Header from '@/components/Header/Header'
+import React from 'react'
 
-type Props = {};
+type Props = {}
 
 const about = (props: Props) => {
-  return <div>about</div>;
-};
+  return (
+    <>
+      <Header />
+    </>
+  )
+}
 
-export default about;
+export default about
