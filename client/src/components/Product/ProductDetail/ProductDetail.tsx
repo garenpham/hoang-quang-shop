@@ -6,7 +6,7 @@ import React from 'react'
 import Header from '../../Header/Header'
 import ProductContent from './ProductContent'
 import ProductDescription from './ProductDescription'
-import ProductRelated from './ProductRelated'
+import ProductsRelatedSection from './RelatedSection/ProductsRelatedSection'
 
 type Props = {
   productDetail: productDetail
@@ -20,7 +20,7 @@ const ProductDetail = ({ productDetail }: Props) => {
       <div className="bg-white px-[--root-margin]">
         <ProductContent productDetail={productDetail} />
         <ProductDescription productDetail={productDetail} />
-        <ProductRelated />
+        <ProductsRelatedSection />
       </div>
       <Footer />
     </>
