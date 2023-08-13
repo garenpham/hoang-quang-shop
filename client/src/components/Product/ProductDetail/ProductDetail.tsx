@@ -5,9 +5,10 @@ import { productDetail } from '@/interfaces/productDetail.dto'
 import React from 'react'
 import Header from '../../Header/Header'
 import ProductContent from './ProductContent'
+import ProductDescription from './ProductDescription'
 
 type Props = {
-  productDetail: productDetail[]
+  productDetail: productDetail
 }
 
 const ProductDetail = ({ productDetail }: Props) => {
@@ -15,8 +16,11 @@ const ProductDetail = ({ productDetail }: Props) => {
   return (
     <>
       <Header />
-      <ProductContent productDetail={productDetail[0]} />
-      {/* <Footer /> */}
+      <div className="bg-white px-[--root-margin]">
+        <ProductContent productDetail={productDetail} />
+        <ProductDescription productDetail={productDetail} />
+      </div>
+      <Footer />
     </>
   )
 }

@@ -42,8 +42,8 @@ const ProductContent = ({ productDetail }: Props) => {
     line: `h-[1px] w-full bg-gray-300`,
   }
   return (
-    <div className="px-[--root-margin]">
-      <div className="flex items-center gap-[6px] mt-[20px] text-[13px]">
+    <>
+      <div className="flex items-center gap-[6px] pt-[20px] text-[13px]">
         <Link href={'/'} className={`${style.link} normal-case`}>
           Trang chủ
         </Link>
@@ -136,7 +136,7 @@ const ProductContent = ({ productDetail }: Props) => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
