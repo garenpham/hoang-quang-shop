@@ -1,6 +1,7 @@
 export type productDetail = {
   _id: string
   name: string
+  manufacturer: string
   isAvailable: boolean
   images: {
     _type: string

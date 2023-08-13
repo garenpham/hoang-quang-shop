@@ -2,6 +2,7 @@ export const getAllProducts = () => {
   return `*[_type == 'product']{
     _id,
     name,
+    manufacturer,
     isAvailable,
     images,
     price,
@@ -15,6 +16,7 @@ export const getProductDetail = (id: string | string[]) => {
   return `*[_type == 'product' && _id == '${id}']{
     _id,
     name,
+    manufacturer,
     isAvailable,
     images,
     price,

@@ -15,8 +15,16 @@ type Props = {
 }
 
 const ProductContent = ({ productDetail }: Props) => {
-  const { generalType, specificType, name, images, price, isAvailable } =
-    productDetail
+  const {
+    generalType,
+    specificType,
+    name,
+    images,
+    price,
+    isAvailable,
+    description,
+    manufacturer,
+  } = productDetail
   const style = {
     link: `capitalize hover:text-[--secondary-color] hover:scale-105 active:scale-100 ${styles.hover_click}`,
     line: `h-[1px] w-full bg-gray-300`,
@@ -61,20 +69,32 @@ const ProductContent = ({ productDetail }: Props) => {
             </div>
           )}
           <div>
-            <p>
+            <p className="text-[20px]">
               Tình trạng:{' '}
               {isAvailable ? (
                 <span className="text-green-600 font-semibold">Còn Hàng</span>
               ) : (
                 <span
-                  className={`${roboto.className} text-gray-500 font-[900] text-[18px]`}>
+                  className={`${roboto.className} text-gray-500 font-[900] text-[24px]`}>
                   Hết Hàng
                 </span>
               )}
             </p>
-            <p>Thông tin sản phẩm:</p>
+            <p className="text-[20px] pt-[8px]">
+              Hãng sản xuất:{' '}
+              <span className="capitalize text-[24px]">{manufacturer}</span>
+            </p>
           </div>
           <div className={style.line} />
+          <div className="flex items-center gap-[8px]">
+            Gọi đặt mua:{' '}
+            <Link
+              href="tel:0938460990"
+              className="text-[--primary-color] font-bold text-[20px]">
+              0938 460 990
+            </Link>{' '}
+            (6:00 - 19:00)
+          </div>
         </div>
       </div>
     </div>

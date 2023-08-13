@@ -4,6 +4,7 @@ export default {
   type: 'document',
   fields: [
     {name: 'name', title: 'Tên mặt hàng', type: 'string'},
+    {name: 'manufacturer', title: 'Hãng sản xuất', type: 'string'},
     {name: 'isAvailable', title: 'Còn hàng?', type: 'boolean', initialValue: true},
     {
       name: 'generalType',
