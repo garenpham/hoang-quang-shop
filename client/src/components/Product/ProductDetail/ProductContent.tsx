@@ -72,7 +72,9 @@ const ProductContent = ({ productDetail }: Props) => {
             <p className="text-[20px]">
               Tình trạng:{' '}
               {isAvailable ? (
-                <span className="text-green-600 font-semibold">Còn Hàng</span>
+                <span className="text-green-600 font-semibold text-[24px]">
+                  Còn Hàng
+                </span>
               ) : (
                 <span
                   className={`${roboto.className} text-gray-500 font-[900] text-[24px]`}>
