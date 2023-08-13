@@ -36,7 +36,7 @@ const Map = (props: Props) => {
                 fontSize: 40,
                 color: 'var(--primary-color)',
               }}>
-              Liên Hệ
+              Gửi tin nhắn
             </Typography>
             <Typography
               variant="body2"
@@ -44,8 +44,8 @@ const Map = (props: Props) => {
               component="p"
               gutterBottom
               style={{ paddingBottom: '2rem' }}>
-              Vui lòng để lại tin nhắn. Chúng tôi sẽ liên hệ lại ngay trong
-              ngày.
+              Hãy liên hệ ngay với chúng tôi để nhận được thông tin tư vấn về
+              sản phẩm cùng nhiều ưu đãi hấp dẫn dành cho bạn!
             </Typography>
             <form>
               <Grid container spacing={1}>

@@ -23,7 +23,7 @@ export default {
       type: 'array',
       of: [{type: 'image', options: {hotspot: true}}],
     },
-    {name: 'price', title: 'Giá cả', type: 'number'},
+    {name: 'price', title: 'Giá cả', type: 'string'},
     {
       name: 'description',
       title: 'Thông tin chi tiết',

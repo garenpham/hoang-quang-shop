@@ -1,5 +1,6 @@
 import { HomeProduct } from '@/interfaces/homeProducts.dto'
 import { urlFor } from '@/utils/client'
+import { formatPrice } from '@/utils/formatPrice'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -16,19 +17,6 @@ const style = {
 
 const HomeProduct = ({ product }: Props) => {
   const { _id, images, name, price } = product
-  const formatPrice = (price: string) => {
-    let formattedPrice = ''
-    let count = 0
-    for (let i = price.length - 1; i >= 0; i--) {
-      if (count === 3) {
-        formattedPrice = ',' + formattedPrice
-        count = 0
-      }
-      formattedPrice = price[i] + formattedPrice
-      count++
-    }
-    return formattedPrice
-  }
 
   return (
     <Link href={`/product/${_id}`} className={style.layout}>
@@ -46,8 +34,13 @@ const HomeProduct = ({ product }: Props) => {
             {name}
           </p>
           <p className="text-base lg:text-3xl font-semibold text-[--primary-color] pb-0 lg:pb-4">
-            {formatPrice(price.toString())}
-            <span className="underline">đ</span>
+            {price ? (
+              <>
+                {formatPrice(price)} <span className="underline">đ</span>{' '}
+              </>
+            ) : (
+              'Liên Hệ'
+            )}
           </p>
         </div>
       </div>

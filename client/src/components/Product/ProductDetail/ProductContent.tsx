@@ -1,7 +1,11 @@
 'use client'
 
+import { roboto } from '@/components/assets/fonts'
 import styles from '@/components/assets/globalStyles'
 import { productDetail } from '@/interfaces/productDetail.dto'
+import { urlFor } from '@/utils/client'
+import { formatPrice } from '@/utils/formatPrice'
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { MdKeyboardArrowRight } from 'react-icons/md'
@@ -11,7 +15,8 @@ type Props = {
 }
 
 const ProductContent = ({ productDetail }: Props) => {
-  const { generalType, specificType, name ,images} = productDetail
+  const { generalType, specificType, name, images, price, isAvailable } =
+    productDetail
   const style = {
     link: `capitalize hover:text-[--secondary-color] hover:scale-105 active:scale-100 ${styles.hover_click}`,
     line: `h-[1px] w-full bg-gray-300`,
@@ -34,9 +39,43 @@ const ProductContent = ({ productDetail }: Props) => {
         <span className="capitalize text-[--secondary-color]">{name}</span>
       </div>
       <div className="font-bold capitalize text-[40px] my-[14px]">{name}</div>
-      <div className="flex">
-        <div className="basis-[50%]">Hello</div>
-        <div className="basis-[50%]">Hi</div>
+      <div className="flex gap-[10%]">
+        <div className="basis-[50%]">
+          <Image
+            alt="product"
+            src={urlFor(images[0]).url()}
+            height={0}
+            width={0}
+            sizes="100%"
+            className="w-full h-auto"
+          />
+        </div>
+        <div className="basis-[40%] flex flex-col gap-[24px]">
+          {price ? (
+            <div className="text-base lg:text-3xl font-bold text-[--primary-color]">
+              {formatPrice(price)} <span className="underline">đ</span>{' '}
+            </div>
+          ) : (
+            <div className="text-base lg:text-3xl font-bold text-[--primary-color]">
+              Liên Hệ
+            </div>
+          )}
+          <div>
+            <p>
+              Tình trạng:{' '}
+              {isAvailable ? (
+                <span className="text-green-600 font-semibold">Còn Hàng</span>
+              ) : (
+                <span
+                  className={`${roboto.className} text-gray-500 font-[900] text-[18px]`}>
+                  Hết Hàng
+                </span>
+              )}
+            </p>
+            <p>Thông tin sản phẩm:</p>
+          </div>
+          <div className={style.line} />
+        </div>
       </div>
     </div>
   )
