@@ -7,8 +7,8 @@ export const getAllProducts = () => {
     images,
     price,
     description,
-    "generalType":generalType->name,
-    "specificType":specificType->name,
+    generalType->{_id, name},
+    specificType->{_id, name},
   }`
 }
 
@@ -21,8 +21,8 @@ export const getProductDetail = (id: string | string[]) => {
     images,
     price,
     description,
-    "generalType":generalType->name,
-    "specificType":specificType->name,
+    generalType->{_id, name},
+    specificType->{_id, name},
   }`
 }
 
@@ -36,7 +36,7 @@ export const getHomeContent = () => {
       images,
       price,
       description,
-    },
+    } | order(name asc),
     specificTypes[]->{
       _id,
       name
@@ -44,34 +44,32 @@ export const getHomeContent = () => {
   }`
 }
 
-export const getGeneralTypeProducts = (name: string) => {
-  return `*[_type == "generalType" && name match '${name}'] {
+export const getGeneralTypeProducts = (id: string) => {
+  return `*[_type == "generalType" && _id == '${id}'] {
     _id,
     name,
     "products": *[_type == "product" && generalType._ref == ^._id] {
       _id,
       name,
       images,
+      isAvailable,
       price,
       description,
-    },
-    specificTypes[]->{
-      _id,
-      name
-    }
+    } | order(name asc)
   }`
 }
 
-export const getSpecificTypeProducts = (name: string) => {
-  return `*[_type == "specificType" && name match '${name}] {
+export const getSpecificTypeProducts = (id: string) => {
+  return `*[_type == "specificType" && _id == '${id}'] {
     _id,
     name,
     "products": *[_type == "product" && specificType._ref == ^._id] {
       _id,
       name,
       images,
+      isAvailable,
       price,
       description,
-    }
+    } | order(name asc),
   }`
 }

@@ -47,14 +47,25 @@ const ProductContent = ({ productDetail }: Props) => {
         <Link href={'/'} className={`${style.link} normal-case`}>
           Trang chủ
         </Link>
-        <MdKeyboardArrowRight className="text-[20px]" />
-        <Link href={'#'} className={style.link}>
-          {specificType}
-        </Link>
-        <MdKeyboardArrowRight className="text-[20px]" />
-        <Link href={'#'} className={style.link}>
-          {generalType}
-        </Link>
+
+        {specificType && (
+          <>
+            <MdKeyboardArrowRight className="text-[20px]" />
+            <Link href={'#'} className={style.link}>
+              {specificType.name}
+            </Link>
+          </>
+        )}
+
+        {generalType && (
+          <>
+            <MdKeyboardArrowRight className="text-[20px]" />
+            <Link href={'#'} className={style.link}>
+              {generalType.name}
+            </Link>
+          </>
+        )}
+
         <MdKeyboardArrowRight className="text-[20px]" />
         <span className="capitalize text-[--secondary-color]">{name}</span>
       </div>

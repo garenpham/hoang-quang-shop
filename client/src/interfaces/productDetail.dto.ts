@@ -12,6 +12,12 @@ export type productDetail = {
   }[]
   price: string
   description: string[]
-  generalType: string
-  specificType: string
+  generalType: {
+    _id: string
+    name: string
+  }
+  specificType: {
+    _id: string
+    name: string
+  }
 }

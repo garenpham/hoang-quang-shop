@@ -10,11 +10,5 @@ export default {
       type: 'array',
       of: [{type: 'reference', to: {type: 'specificType'}}],
     },
-    {
-      name: 'products',
-      title: 'Danh sách sản phẩm thuộc nhóm này',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'product'}}],
-    },
   ],
 }
