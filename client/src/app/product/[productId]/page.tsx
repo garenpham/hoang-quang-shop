@@ -1,10 +1,10 @@
 import ProductDetail from '@/components/Product/ProductDetail/ProductDetail'
-import { BASE_URL } from '@/constants/urls'
+import getBasePath from '@/utils/getBasePath'
 import React from 'react'
 
 export const revalidate = 0
 const getProductDetail = async (productId: string) => {
-  const res = await fetch(`${BASE_URL}/product/${productId}`)
+  const res = await fetch(`${getBasePath()}/api/product/${productId}`)
 
   if (!res.ok) {
     throw new Error('Failed to fetch data')
@@ -14,7 +14,7 @@ const getProductDetail = async (productId: string) => {
 }
 
 const getRelatedProducts = async (productId: string) => {
-  const res = await fetch(`${BASE_URL}/product/related/${productId}`)
+  const res = await fetch(`${getBasePath()}/api/product/related/${productId}`)
 
   if (!res.ok) {
     throw new Error('Failed to fetch data')
