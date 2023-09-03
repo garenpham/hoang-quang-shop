@@ -32,23 +32,23 @@ const HomeList = ({ data }: Props) => {
   return (
     <>
       <article id={name} className={style.wrapper}>
-        <div className="flex flex-col text-center mt-[2rem] uppercase lg:gap-[.5rem]">
-          <p className="italic text-[--primary-color] lg:text-4xl">
+        <div className='flex flex-col text-center mt-[.8rem] lg:mt-[2rem] uppercase lg:gap-[.5rem]'>
+          <p className='italic text-[--primary-color] lg:text-4xl'>
             Chuyên kinh doanh. Sửa chữa. Lắp đặt:
           </p>
-          <p className="text-[--secondary-color] font-bold lg:text-[2.34rem]">
-            Điện nước dân dụng - Ống nước <br className="block lg:hidden" />-
+          <p className='text-[--secondary-color] font-bold lg:text-[2.34rem]'>
+            Điện nước dân dụng - Ống nước <br className='block lg:hidden' />-
             Vật liệu xây dựng
           </p>
         </div>
         <div className={style.line} />
         <div className={style.menu}>
-          <div className="flex justify-between">
-            <Link href="#" className={style.titleContainer}>
+          <div className='flex justify-between'>
+            <Link href='#' className={style.titleContainer}>
               <h2 className={`pr-[.4rem] ${styles.menuTitle}`}>{name}</h2>
             </Link>
             <div
-              className="flex lg:hidden bg-[--background-color] h-[3rem] flex-col justify-center"
+              className='flex lg:hidden bg-[--background-color] h-[3rem] flex-col justify-center'
               onClick={() => setCategoryToggle(!categoryToggle)}>
               {' '}
               <MoreVertIcon
@@ -63,15 +63,15 @@ const HomeList = ({ data }: Props) => {
           <div className={style.categoryContainer}>
             {specificTypes.map((category) => (
               <Link
-                href="#"
+                href='#'
                 key={category._id}
                 className={`w-full lg:w-auto mr-4 py-3 lg:py-0 hover:text-[--secondary-color] hover:scale-105 active:scale-95 ${styles.hover_click} border-b-[2px] border-dotted lg:border-none`}>
-                <p className="first-letter:uppercase">{category.name}</p>
+                <p className='first-letter:uppercase'>{category.name}</p>
               </Link>
             ))}
 
             <Link
-              href="#"
+              href='#'
               className={`pt-3 lg:pt-0 text-gray-400 font-semibold hover:text-[--secondary-color] hover:scale-105 active:scale-95 ${styles.hover_click}`}>
               Xem tất cả
               <ArrowForwardIosIcon sx={{ fontSize: 20 }} />

@@ -43,7 +43,7 @@ const ProductContent = ({ productDetail }: Props) => {
   }
   return (
     <>
-      <div className='flex items-center gap-[6px] pt-[20px] text-[13px]'>
+      <div className='flex flex-wrap items-center gap-[6px] pt-[20px] text-[13px]'>
         <Link href={'/'} className={`${style.link} normal-case`}>
           Trang chủ
         </Link>

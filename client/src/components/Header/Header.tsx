@@ -7,7 +7,7 @@ import Nav from './Nav/Nav'
 import Search from './Search/Search'
 
 const style = {
-  wrapper: `flex flex-col lg:flex-row justify-center lg:justify-between pt-[1rem] pb-0 lg:pb-[1.6rem] px-[--root-margin]`,
+  wrapper: `flex flex-col lg:flex-row justify-center lg:justify-between pt-[1rem] pb-[1.4rem] lg:pb-[1.6rem] px-[--root-margin]`,
   logo_search: `flex gap-8 flex-col lg:flex-row`,
 }
 
