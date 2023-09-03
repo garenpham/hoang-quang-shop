@@ -1,4 +1,4 @@
-const hover_click = `transform transition duration-200 ease-in-out`
+const hover_click = `transition-transform ease-in-out`
 const menuSlide = `transition-all duration-500 ease-in-out`
 
 const styles = {

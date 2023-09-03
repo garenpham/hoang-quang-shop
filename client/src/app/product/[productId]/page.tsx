@@ -13,15 +13,29 @@ const getProductDetail = async (productId: string) => {
   return res.json()
 }
 
+const getRelatedProducts = async (productId: string) => {
+  const res = await fetch(`${BASE_URL}/product/related/${productId}`)
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
+
+  return res.json()
+}
+
 async function Product({
   params: { productId },
 }: {
   params: { productId: string }
 }) {
-  const data = await getProductDetail(productId)
+  const productData = await getProductDetail(productId)
+  const relatedProducts = await getRelatedProducts(productId)
   return (
     <>
-      <ProductDetail productDetail={data} />
+      <ProductDetail
+        productDetail={productData}
+        relatedProducts={relatedProducts}
+      />
     </>
   )
 }

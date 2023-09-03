@@ -1,9 +1,9 @@
 import HomePage from '@/components/Home/HomePage'
-import { BASE_URL } from '@/constants/urls'
+import getBasePath from '@/utils/getBasePath'
 
 export const revalidate = 0
 const getData = async () => {
-  const res = await fetch(`${BASE_URL}/home`)
+  const res = await fetch(`${getBasePath()}/api/home`)
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
 

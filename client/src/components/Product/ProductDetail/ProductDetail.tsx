@@ -2,6 +2,7 @@
 
 import Footer from '@/components/Footer/Footer'
 import { productDetail } from '@/interfaces/productDetail.dto'
+import { relatedProductsDto } from '@/interfaces/relatedProducts.dto'
 import React from 'react'
 import Header from '../../Header/Header'
 import ProductContent from './ProductContent'
@@ -10,10 +11,12 @@ import ProductsRelatedSection from './RelatedSection/ProductsRelatedSection'
 
 type Props = {
   productDetail: productDetail
+  relatedProducts: relatedProductsDto
 }
 
-const ProductDetail = ({ productDetail }: Props) => {
+const ProductDetail = ({ productDetail, relatedProducts }: Props) => {
   //console.log(productDetail)
+  console.log(relatedProducts)
   return (
     <>
       <Header />
