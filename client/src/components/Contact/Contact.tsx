@@ -10,8 +10,8 @@ import {
 type Props = {}
 
 const style = {
-  wrapper: `w-full h-[1000px] lg:h-[500px] bg-white px-[--root-margin] flex flex-col lg:flex-row gap-4`,
-  mapContainer: `h-full flex flex-col justify-center max-w-[100%] lg:max-w-[48%] w-full`,
+  wrapper: `w-full h-[1000px] xl:h-[500px] bg-white px-[--root-margin] flex flex-col xl:flex-row gap-4`,
+  mapContainer: `h-full flex flex-col justify-center max-w-[100%] xl:max-w-[48%] w-full`,
   map: `w-full`,
 }
 

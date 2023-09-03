@@ -29,10 +29,10 @@ const ProductContent = ({ productDetail }: Props) => {
   React.useEffect(() => {
     const interval = setInterval(() => {
       setSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1))
-      const imageFocus = document.getElementById(
-        `${slide === images.length - 1 ? 0 : slide + 1}`
-      )
-      if (imageFocus) imageFocus.scrollIntoView()
+      // const imageFocus = document.getElementById(
+      //   `${slide === images.length - 1 ? 0 : slide + 1}`
+      // )
+      // if (imageFocus) imageFocus.scrollIntoView()
     }, 10000)
     return () => clearInterval(interval)
   }, [images.length, slide])
@@ -69,8 +69,10 @@ const ProductContent = ({ productDetail }: Props) => {
         <MdKeyboardArrowRight className='text-[20px]' />
         <span className='capitalize text-[--secondary-color]'>{name}</span>
       </div>
-      <div className='font-bold capitalize text-[40px] my-[14px]'>{name}</div>
-      <div className='flex gap-[10%]'>
+      <div className='font-bold capitalize text-[34px] xl:text-[40px] my-[14px] mb-[1rem] mt-[3rem] xl:mb-0 xl:mt-0'>
+        {name}
+      </div>
+      <div className='flex gap-[10%] flex-col xl:flex-row'>
         <div className='basis-[50%]'>
           {images.map((image, idx) => (
             <div key={idx + 1}>
@@ -108,13 +110,13 @@ const ProductContent = ({ productDetail }: Props) => {
             </div>
           )}
         </div>
-        <div className='basis-[40%] flex flex-col gap-[24px]'>
+        <div className='basis-[40%] flex flex-col gap-[24px] mt-[2rem]'>
           {price ? (
-            <div className='text-base lg:text-4xl font-bold text-[--primary-color]'>
+            <div className='text-4xl font-bold text-[--primary-color]'>
               {formatPrice(price)} <span className='underline'>đ</span>{' '}
             </div>
           ) : (
-            <div className='text-base lg:text-4xl font-bold text-[--primary-color]'>
+            <div className='text-4xl font-bold text-[--primary-color]'>
               Liên Hệ
             </div>
           )}
@@ -138,7 +140,7 @@ const ProductContent = ({ productDetail }: Props) => {
             </p>
           </div>
           <div className={style.line} />
-          <div className='flex items-center gap-[8px]'>
+          <div className='flex items-center gap-[8px] flex-wrap'>
             <span className='font-semibold'>Gọi đặt mua:</span>{' '}
             <Link
               href='tel:0938460990'

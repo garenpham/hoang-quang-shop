@@ -11,8 +11,8 @@ type Props = {
 }
 
 const style = {
-  layout: `w-full max-w-[47%] lg:max-w-[23.5%]`,
-  container: `group lg:rounded-2xl shadow lg:shadow-none hover:shadow-xl p-1 lg:p-4 hover:scale-105 active:scale-100 ${styles.hover_click}`,
+  layout: `w-full max-w-[47%] xl:max-w-[23.5%]`,
+  container: `group xl:rounded-2xl shadow xl:shadow-none hover:shadow-xl p-1 xl:p-4 hover:scale-105 active:scale-100 ${styles.hover_click}`,
 }
 
 const HomeProduct = ({ product }: Props) => {
@@ -26,17 +26,17 @@ const HomeProduct = ({ product }: Props) => {
           alt={name}
           height={0}
           width={0}
-          sizes="100%"
-          className="w-full pb-4"
+          sizes='100%'
+          className='w-full pb-4'
         />
-        <div className="">
-          <p className="text-xs lg:text-base group-hover:font-bold group-hover:drop-shadow-xl">
+        <div className=''>
+          <p className='text-xs xl:text-base group-hover:font-bold group-hover:drop-shadow-xl'>
             {name}
           </p>
-          <p className="text-base lg:text-3xl font-semibold text-[--primary-color] pb-0 lg:pb-4">
+          <p className='text-base xl:text-3xl font-semibold text-[--primary-color] pb-0 xl:pb-4'>
             {price ? (
               <>
-                {formatPrice(price)} <span className="underline">đ</span>{' '}
+                {formatPrice(price)} <span className='underline'>đ</span>{' '}
               </>
             ) : (
               'Liên Hệ'

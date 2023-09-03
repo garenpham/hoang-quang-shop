@@ -3,9 +3,9 @@ import React from 'react'
 import styles from '../../assets/globalStyles'
 
 const style = {
-  wrapper: `w-full lg:w-auto h-[2rem] lg:h-[3rem] m-auto text-[0.6rem] lg:text-sm flex lg:hover:scale-105 ${styles.hover_click}`,
-  inputField: `w-full lg:w-[300px] py-3 pl-4 outline-none rounded-l lg:rounded-l-xl hover:shadow`,
-  searchContainer: `my-auto bg-[--primary-color] py-1 px-2 lg:px-2 rounded-r lg:rounded-r-xl`,
+  wrapper: `w-full xl:w-auto h-[2rem] xl:h-[3rem] m-auto text-[0.6rem] xl:text-sm flex xl:hover:scale-105 ${styles.hover_click}`,
+  inputField: `w-full xl:w-[300px] py-3 pl-4 outline-none rounded-l xl:rounded-l-xl hover:shadow`,
+  searchContainer: `my-auto bg-[--primary-color] py-1 px-2 xl:px-2 rounded-r xl:rounded-r-xl`,
 }
 
 const Search = () => {

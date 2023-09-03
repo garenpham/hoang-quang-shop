@@ -4,8 +4,8 @@ import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
 import Link from "next/link";
 
 const style = {
-  wrapper: `hidden lg:flex items-center gap-[1.4rem] text-[1.2rem]`,
-  item: `hidden lg:flex gap-2 group`,
+  wrapper: `hidden xl:flex items-center gap-[1.4rem] text-[1.2rem]`,
+  item: `hidden xl:flex gap-2 group`,
   icon: `text-[1.6rem] mb-1`,
 }
 
