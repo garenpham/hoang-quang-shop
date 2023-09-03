@@ -26,7 +26,7 @@ const HomeList = ({ data }: Props) => {
     categoryContainer: `${
       categoryToggle ? 'flex' : 'hidden lg:flex'
     } flex-col lg:flex-row text-sm items-start`,
-    productContainer: `flex flex-wrap gap-[1rem] justify-center lg:justify-start`,
+    productContainer: `flex flex-wrap gap-[1rem]`,
   }
 
   return (

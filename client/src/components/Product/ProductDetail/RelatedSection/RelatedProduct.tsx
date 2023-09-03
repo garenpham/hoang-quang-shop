@@ -1,5 +1,5 @@
 import styles from '@/components/assets/globalStyles'
-import { productDetail } from '@/interfaces/productDetail.dto'
+import { relatedProductDto } from '@/interfaces/relatedProduct.dto'
 import { urlFor } from '@/utils/client'
 import { formatPrice } from '@/utils/formatPrice'
 import Image from 'next/image'
@@ -7,7 +7,7 @@ import Link from 'next/link'
 import React from 'react'
 
 type Props = {
-  product: productDetail
+  product: relatedProductDto
 }
 
 const style = {

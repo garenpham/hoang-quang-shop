@@ -1,4 +1,4 @@
-export type relatedProductsDto = {
+export type relatedProductDto = {
   _id: string
   name: string
   images: {
@@ -12,4 +12,4 @@ export type relatedProductsDto = {
   price: string
   isAvailable: boolean
   description: string[]
-}[]
+}

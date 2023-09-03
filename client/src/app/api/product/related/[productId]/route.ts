@@ -1,4 +1,4 @@
-import { relatedProductsDto } from '@/interfaces/relatedProducts.dto'
+import { relatedProductDto } from '@/interfaces/relatedProduct.dto'
 import { client } from '@/utils/client'
 import {
   getGeneralTypeProducts,
@@ -19,7 +19,7 @@ export async function GET(
     getGeneralTypeProducts(generalTypeId)
   )
 
-  let relatedProducts: relatedProductsDto = generalTypeProducts[0].products
+  let relatedProducts: relatedProductDto[] = generalTypeProducts[0].products
 
   const specificTypeId = productData[0].specificType._id
   const specificTypeProductsData = await client.fetch(
