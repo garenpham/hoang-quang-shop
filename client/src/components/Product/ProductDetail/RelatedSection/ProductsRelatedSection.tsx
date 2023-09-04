@@ -9,7 +9,7 @@ type Props = {
 const ProductsRelatedSection = ({ relatedProducts }: Props) => {
   return (
     <>
-      <h2 className='text-lg xl:text-2xl font-[900] uppercase tracking-[2px] w-fit bg-[--secondary-color] text-white py-[.4rem] px-[1.2rem] rounded-lg mx-auto'>
+      <h2 className='text-lg xl:text-2xl font-[900] uppercase tracking-[2px] w-fit bg-[--secondary-color] text-white py-[.4rem] px-[1.2rem] rounded-lg mx-auto xl:mx-0'>
         Sản phẩm liên quan
       </h2>
 

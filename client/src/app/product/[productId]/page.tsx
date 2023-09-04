@@ -2,7 +2,7 @@ import ProductDetail from '@/components/Product/ProductDetail/ProductDetail'
 import getBasePath from '@/utils/getBasePath'
 import React from 'react'
 
-export const revalidate = 100
+export const revalidate = 0
 const getProductDetail = async (productId: string) => {
   const res = await fetch(`${getBasePath()}/api/product/${productId}`)
 
